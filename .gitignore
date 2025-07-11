@@ -1,0 +1,5 @@
+/target
+*.png
+*.txt
+*.mp4
+.venv
