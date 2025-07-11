@@ -10,7 +10,9 @@ $$u_{tt} = c^2 \left(u_{\phi \phi} + \cot \phi u_\phi + \frac{1}{\sin \phi} u_{\
 The general solution is
 $$u(\theta, \phi, t) = \sum_n \sum_m u_{mn}(\theta, \phi, t)$$
 where
-$$ u_{mn}(\theta, \phi, t) = R + aP_n^m(\cos \phi) \cos(m\theta) \cos(\omega_{mn} t)$$
+
+$$u_{mn}(\theta, \phi, t) = R + aP_n^m(\cos \phi) \cos(m\theta) \cos(\omega_{mn} t)$$
+
 with $m \leq n$ and $\omega_{mn} = c \sqrt{n(n+1)}$ and $P_n^m$ are the Associated Legendre Polynomials.
 
 The code calculates $u_{mn}$ for $m=0,\dots,n_{max}$ and for $t\in[0,t_{max}]$, where $t_{max} = 2\pi/\omega_{mn}$.
