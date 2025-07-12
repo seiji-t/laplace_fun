@@ -4,18 +4,19 @@ This repo is for educational purposes.
 
 ### Introduction
 The vibrations of a spherical membrane with radius $R$ are described by the following equation
-
-$$u_{tt} = c^2 \left(u_{\phi \phi} + \cot \phi u_\phi + \frac{1}{\sin \phi} u_{\theta \theta} \right)$$
+$$v_{tt} = \bigtriangleup v\$$
+in spherical coordinates. Let's consider the solutions that are in the form $v(r,\phi, \theta,t) \approx R + u(\phi, \theta, t)$ for $r \rightarrow R$, then
+$$u_{tt} = c^2 \left(u_{\phi \phi} + \cot \phi u_\phi + \frac{1}{\sin^2 \phi} u_{\theta \theta} \right)$$
 
 The general solution is
-$$u(\theta, \phi, t) = \sum_n \sum_m u_{mn}(\theta, \phi, t)$$
+$$u(\theta, \phi, t) = \sum_n \sum_m a_{mm} u_{mn}(\theta, \phi, t)$$
 where
 
-$$u_{mn}(\theta, \phi, t) = R + aP_n^m(\cos \phi) \cos(m\theta) \cos(\omega_{mn} t)$$
+$$u_{mn}(\theta, \phi, t) = P_n^m(\cos \phi) \cos(m\theta) \cos(\omega_{mn} t)$$
 
 with $m \leq n$ and $\omega_{mn} = c \sqrt{n(n+1)}$ and $P_n^m$ are the Associated Legendre Polynomials.
 
-The code calculates $u_{mn}$ for $m=0,\dots,n_{max}$ and for $t\in[0,t_{max}]$, where $t_{max} = 2\pi/\omega_{mn}$.
+The code calculates $(R + u_{mn})$ for $m=0,\dots,n_{max}$ and for $t\in[0,t_{max}]$, where $t_{max} = 2\pi/\omega_{mn}$.
 
 ### How to run
 
