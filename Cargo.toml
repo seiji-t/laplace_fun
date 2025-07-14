@@ -1,5 +1,5 @@
 [package]
-name = "laplacian_fun"
+name = "laplace_fun"
 version = "0.1.0"
 edition = "2024"
 
