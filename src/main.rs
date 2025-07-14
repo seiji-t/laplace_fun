@@ -5,6 +5,7 @@ use std::io::prelude::*;
 use gauss_quad::GaussLegendre;
 use std::str::FromStr;
 use std::env;
+mod alp;
 
 fn main() -> std::io::Result<()>{
     let c = 1.0;
@@ -54,7 +55,7 @@ fn main() -> std::io::Result<()>{
             let omega_nm = c * ((n as f64) * ((n + 1) as f64)).sqrt();
 
             for i_t in 0..nt{ 
-                let filename = format!("scripts/data/{:02}_{:02}_{:04}.txt", n,m,i_t);
+                let filename = format!("data/{:02}_{:02}_{:04}.txt", n,m,i_t);
                 let mut file = File::create(filename)?;
                 let t = 0.0 + (i_t as f64) * t_period/((nt - 1 )as f64);
                 for mu_val in mu.clone(){

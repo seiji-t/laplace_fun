@@ -42,3 +42,12 @@ def main():
         plt.close()
 if __name__ == "__main__":
     main()
+
+def nn(n):
+    if n == 0:
+        return 1
+    return n * nn(n-1)
+def nn(l,m):
+    return math.sqrt( (2*l+1) * math.factorial(l-m)/2/math.pi/math.factorial(l+m) )
+
+nn(0,0)
