@@ -14,7 +14,7 @@ def main():
         kount=1
         for n in range(nmax):
             for m in range(n+1):
-                data = np.loadtxt('scripts/data/{:02d}_{:02d}_{:04d}.txt'.format(n,m,it), delimiter=',')
+                data = np.loadtxt('data/{:02d}_{:02d}_{:04d}.txt'.format(n,m,it), delimiter=',')
                 n_mu = 64
                 n_theta = 128
 

@@ -26,7 +26,7 @@ cargo run NMAX NT
 ```
 The solutions are written in text files at 
 ```Bash
-scripts/data/{n}_{m}_{t}.txt
+data/{n}_{m}_{t}.txt
 ```
 After that, you can plot these solutions using a Python script
 ```Bash
@@ -34,7 +34,7 @@ python scripts/view_data.py NMAX NT
 ```
 This script will create a panel plotting each $u_{mn}$ for multiples times. Each frame has also a small rotation in the viewer angle. The figures are stored at
 ```Bash
-scripts/fig/fig_{t}.txt
+fig/fig_{t}.txt
 ```
 Finally, you can generate a gif or mp4 with
 ```Bash
