@@ -5,4 +5,3 @@ edition = "2024"
 
 [dependencies]
 gauss-quad = "0.2.3"
-scirs2-special = "0.1.0-alpha.6"

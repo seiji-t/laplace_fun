@@ -1,10 +1,10 @@
 use std::f64::consts::PI;
 
-fn pt(l: usize, m: usize) -> usize {
+pub fn pt(l: usize, m: usize) -> usize {
     m + (l * (l + 1)) / 2
 }
 
-fn precompute_ab(ll: usize, a: &mut Vec<f64>, b: &mut Vec<f64>) {
+pub fn precompute_ab(ll: usize, a: &mut Vec<f64>, b: &mut Vec<f64>) {
     for l in 2..=ll {
         let ls = (l * l) as f64;
         let lm1s = ((l - 1) * (l - 1)) as f64;
@@ -16,7 +16,7 @@ fn precompute_ab(ll: usize, a: &mut Vec<f64>, b: &mut Vec<f64>) {
     }
 }
 
-fn compute_p(
+pub fn compute_p(
     l_max: usize,
     a: &Vec<f64>,
     b: &Vec<f64>,
