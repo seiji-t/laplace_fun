@@ -22,17 +22,17 @@ The code calculates $(R + u_{mn})$ for $m=0,\dots,n_{max}$ and for $t\in[0,t_{ma
 
 To calculate $u_{mn}$ you have to
 ```Bash
-cargo run NMAX NT
+cargo run NMAX
 ```
 The solutions are written in text files at 
 ```Bash
-data/{n}_{m}_{t}.txt
+data/{n}_{m}.txt
 ```
 After that, you can plot these solutions using a Python script
 ```Bash
 python scripts/view_data.py NMAX NT
 ```
-This script will create a panel plotting each $u_{mn}$ for multiples times. Each frame has also a small rotation in the viewer angle. The figures are stored at
+This script will create a panel plotting each $u_{mn}$ for multiples times. Use $NT=0$ to plot a single snapshot. Each frame has also a small rotation in the viewer angle. The figures are stored at
 ```Bash
 fig/fig_{t}.txt
 ```
