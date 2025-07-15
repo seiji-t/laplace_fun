@@ -9,7 +9,6 @@ mod alp;
 
 fn main() -> std::io::Result<()>{
     let c = 1.0;
-    let t_period = 2.0*PI/c;
 
     let amp = 0.5;
     let radius = 1.0;
@@ -34,12 +33,11 @@ fn main() -> std::io::Result<()>{
     }
 
     if params.len() == 0{
-        eprintln!("Usage: laplacian_fun NMAX NT");
+        eprintln!("Usage: laplacian_fun NMAX");
         std::process::exit(1);
     }
 
     let nmax = params[0];
-    let nt = params[1];
 
     for i in 0..n_mu{
         phi.push(-PI/2.0 + (i as f64) * dphi);
@@ -54,19 +52,16 @@ fn main() -> std::io::Result<()>{
             println!("n,m = {:?},{:?}",n,m);
             let omega_nm = c * ((n as f64) * ((n + 1) as f64)).sqrt();
 
-            for i_t in 0..nt{ 
-                let filename = format!("data/{:02}_{:02}_{:04}.txt", n,m,i_t);
-                let mut file = File::create(filename)?;
-                let t = 0.0 + (i_t as f64) * t_period/((nt - 1 )as f64);
-                for mu_val in mu.clone(){
-                    for j in 0..n_theta{
-                        let theta_val = theta[j];
-                        let pmn_val = legendre_assoc(n,m as i32,*mu_val);
-                        let cos_theta = (m as f64 * theta_val).cos();
-                        let cos_omega = (omega_nm * t).cos();
-                        let u_val = radius + amp * pmn_val * cos_theta * cos_omega;
-                        write!(file, "{:?},{:?},{:?}\n",theta_val, *mu_val, u_val)?;
-                    }
+            let filename = format!("data/{:02}_{:02}.txt", n,m);
+            let mut file = File::create(filename)?;
+            write!(file, "{:?},{:?},{:?},{:?},{:?}\n", omega_nm,c,radius,n_mu,n_theta)?;
+            for mu_val in mu.clone(){
+                for j in 0..n_theta{
+                    let theta_val = theta[j];
+                    let pmn_val = legendre_assoc(n,m as i32,*mu_val);
+                    let cos_theta = (m as f64 * theta_val).cos();
+                    let u_val = radius + amp * pmn_val * cos_theta;
+                    write!(file, "{:?},{:?},{:?}\n",theta_val, *mu_val, u_val)?;
                 }
             }
         }
