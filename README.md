@@ -57,6 +57,6 @@ bash scripts/make_gif.sh
 
 This is a sample of the resulting gif using NMAX = 6 and NT = 120
 ![alt text](./fig/out.gif)
-References: 
-https://faculty.fiu.edu/~meziani/Note13.pdf
-https://arxiv.org/pdf/1410.1748
+References:
+- https://faculty.fiu.edu/~meziani/Note13.pdf
+- https://arxiv.org/pdf/1410.1748
