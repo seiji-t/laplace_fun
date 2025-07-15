@@ -26,7 +26,7 @@ We are using normalized Associated Legendre Polynomials. The calculation is done
 
 Thus, in this code we are actually calculating
 
-$$\overline{P_n^m}(x) = \sqrt{\frac{(2n+1)(n-m)!}{2\pi(n+m)!}}$$
+$$\overline{P_n^m}(x) = \sqrt{\frac{(2n+1)(n-m)!}{2\pi(n+m)!}} P_n^m (x)$$
 
 Hence
 
